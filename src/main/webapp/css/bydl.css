@@ -1,0 +1,15 @@
+*{ margin:0 auto; padding:0;}
+body{ font-family:"宋体"; font-size:12px; color:#666666;}
+a img {border:none;}
+img{border:0}
+*:focus {outline: none}
+.clear{ clear:both;}
+.logo{ padding:15px 0 0 20px;}
+.width{ width:565px; height:408px; background:url(../img/bj.png); margin-top:100px;}
+.text{ width:235px; float:left; margin:115px 0 0 166px;}
+.kuang{ padding-bottom:15px;}
+.right{ width:70px; height:69px; float:left; padding:135px 0 0 20px;}
+#btn{ width:70px; height:69px; background:url(../img/dlbj.png); border:0;
+ font-size:22px; color:#FFF; font-weight:bold;}
+#name{ width:150px;}
+#pwd{ width:150px;}

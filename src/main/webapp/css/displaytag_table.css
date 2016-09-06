@@ -1,0 +1,12 @@
+table {
+	border: 1px solid #99CCFF;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th,td {
+	border: 1px solid #99CCFF;
+	text-align: left;
+	vertical-align: top;
+	width: 10%;
+}
