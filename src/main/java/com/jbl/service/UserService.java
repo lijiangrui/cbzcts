@@ -12,8 +12,6 @@ public interface UserService {
 	
 	public User login(User user) throws Exception;
 
-	public void removeByIds(String ids) throws Exception;
-
 	public void update(User user) throws Exception;
 
 	public List<User> getUserList(User user) throws Exception;

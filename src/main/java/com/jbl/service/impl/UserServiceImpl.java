@@ -84,29 +84,12 @@ public class UserServiceImpl implements UserService {
 		logger.info(Encrypt.e(user.getPwd()));
 		String hql = "from Tuser u where u.deltriger =0 and u.name=:name and u.pwd=:pwd";
 		Tuser u = userDAO.get(hql,params);
-		if(u != null){
-			
-			return copyProperty(u);
+		if(u == null || u.getDeltriger()){
+			return null;
 		}
-		return null;
+		return copyProperty(u);
 	}
 
-	@Override
-	public void removeByIds(String ids) throws Exception {
-		String hql = "delete Tuser t where 1=1 and t.id in (";
-		if(ids != null && !"".equals(ids)){
-			String[] idsArr = ids.split(",");
-			for(int i=0;i<idsArr.length;i++){
-				if(i>0){
-					hql += ",";
-				}
-				hql += "'"+idsArr[i]+"'";
-			}
-			hql+= ")";
-		}
-		logger.info(hql);
-		userDAO.executeHql(hql);
-	}
 
 	@Override
 	public void update(User user) throws Exception {
