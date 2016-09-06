@@ -91,7 +91,8 @@ public class CertificateServiceImpl implements CertificateService {
 	public void delete(Certificate certificate) throws Exception {
 		// TODO Auto-generated method stub
 		Tcertificate tcer = cerDAO.get(Tcertificate.class,certificate.getId());
-		cerDAO.remove(tcer);
+		tcer.setDeltriger(true);
+		cerDAO.update(tcer);
 	}
 	@Override
 	public void save(Certificate certificate) throws Exception {

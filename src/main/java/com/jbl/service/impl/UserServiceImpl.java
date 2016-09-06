@@ -31,7 +31,6 @@ public class UserServiceImpl implements UserService {
 	 * Logger for this class
 	 */
 	private UserDAO userDAO;
-	
 	private DeptDAO deptDAO;
 	private RoleDAO roleDAO;
 	private TitleDAO titleDAO;
@@ -234,7 +233,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void delete(User user) throws Exception {
 		Tuser tu = userDAO.get(Tuser.class, user.getId());
-		userDAO.remove(tu);
+		tu.setDeltriger(true);
+		userDAO.update(tu);
 	}
 
 	@Override

@@ -137,7 +137,8 @@ public class DeptServiceImpl implements DeptService {
 	@Override
 	public void delete(Dept dept) throws Exception {
 		Tdept tdept = deptDAO.get(Tdept.class,dept.getId());
-		deptDAO.remove(tdept);
+		tdept.setDeltriger(true);
+		deptDAO.update(tdept);
 	}
 
 	@Override

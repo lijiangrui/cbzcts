@@ -184,7 +184,8 @@ public class PatrolServiceImpl implements PatrolService {
 	@Override
 	public void delete(Patrol patrol) throws Exception {
 		Tpatrol tp = patrolDAO.get(Tpatrol.class, patrol.getId());
-		patrolDAO.remove(tp);
+		tp.setDeltriger(true);
+		patrolDAO.update(tp);
 	}
 	@Override
 	public Patrol getPatrolBySerialNo(String serialNo) throws Exception {

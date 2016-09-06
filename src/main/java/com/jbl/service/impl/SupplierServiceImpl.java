@@ -247,7 +247,8 @@ public class SupplierServiceImpl implements SupplierService {
 	@Override
 	public void delete(Supplier supplier) throws Exception {
 		Tsupplier ts = sprDAO.get(Tsupplier.class, supplier.getId());
-		sprDAO.remove(ts);
+		ts.setDeltriger(true);
+		sprDAO.update(ts);
 	}
 	@Override
 	public boolean isExist(String no) throws Exception {

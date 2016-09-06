@@ -33,7 +33,7 @@
 	</div>
    	<display:table name="resultList" id="table_row"
 			class="ITS" 
-			requestURI="patrol/showpatrollist!showPatrolList.action"
+			requestURI="showpatrollist!showPatrolList.action"
 		 	cellpadding="0" cellspacing="0" 
 		 	size="${total}" pagesize="${pagesize}"
 		 	>

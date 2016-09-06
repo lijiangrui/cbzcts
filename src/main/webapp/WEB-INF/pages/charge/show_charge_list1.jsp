@@ -33,7 +33,7 @@
 	</div>
    	<display:table name="resultList" id="table_row"
 			class="ITS" 
-			requestURI="charge/showchargelist!showChargeList.action"
+			requestURI="showchargelist!showChargeList.action"
 		 	cellpadding="0" cellspacing="0" 
 		 	size="${total}" pagesize="${pagesize}"
 		 	>

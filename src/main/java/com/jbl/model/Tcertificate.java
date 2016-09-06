@@ -27,6 +27,7 @@ public class Tcertificate implements java.io.Serializable {
 	private String no;
 	private String unit;
 	private Date validate;
+	private Boolean deltriger;
 
 	// Constructors
 
@@ -111,5 +112,13 @@ public class Tcertificate implements java.io.Serializable {
 	public void setValidate(Date validate) {
 		this.validate = validate;
 	}
+	@Column(name = "deltriger", length = 19)
+	public Boolean getDeltriger() {
+		return deltriger;
+	}
 
+	public void setDeltriger(Boolean deltriger) {
+		this.deltriger = deltriger;
+	}
+	
 }

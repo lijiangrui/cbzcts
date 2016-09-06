@@ -94,7 +94,8 @@ public class ProductServiceImpl implements ProductService {
 	public void delete(Product product) throws Exception {
 		// TODO Auto-generated method stub
 		Tproduct tpro = proDAO.get(Tproduct.class,product.getId());
-		proDAO.remove(tpro);
+		tpro.setDeltriger(true);
+		proDAO.update(tpro);
 	}
 	@Override
 	public void save(Product product) throws Exception {

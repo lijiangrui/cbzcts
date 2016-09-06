@@ -123,7 +123,8 @@ public class TypeServiceImpl implements TypeService {
 	@Override
 	public void delete(Type type) throws Exception {
 		Ttype tt = typeDAO.get(Ttype.class, type.getId());
-		typeDAO.remove(tt);
+		tt.setDeltriger(true);
+		typeDAO.update(tt);
 	}
 
 }

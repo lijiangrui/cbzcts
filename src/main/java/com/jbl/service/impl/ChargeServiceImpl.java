@@ -183,7 +183,8 @@ public class ChargeServiceImpl implements ChargeService {
 	@Override
 	public void delete(Charge charge) throws Exception {
 		Tcharge tc = chargeDAO.get(Tcharge.class, charge.getId());
-		chargeDAO.remove(tc);
+		tc.setDeltriger(true);
+		chargeDAO.update(tc);
 	}
 	@Override
 	public Charge getChargeBySerialNo(String serialNo) throws Exception {

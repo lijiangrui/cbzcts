@@ -30,6 +30,7 @@ public class Tcharge implements java.io.Serializable {
 	private String no;
 	private int money;
 	private String comment;
+	private Boolean deltriger;
 
 	// Constructors
 
@@ -150,4 +151,14 @@ public class Tcharge implements java.io.Serializable {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+
+	@Column(name="deltriger")
+	public Boolean getDeltriger() {
+		return deltriger;
+	}
+
+	public void setDeltriger(Boolean deltriger) {
+		this.deltriger = deltriger;
+	}
+	
 }

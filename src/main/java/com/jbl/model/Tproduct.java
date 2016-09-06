@@ -27,6 +27,7 @@ public class Tproduct implements java.io.Serializable {
 	private String yearProfit;
 	private String yearTax;
 	private String saleTo;
+	private Boolean deltriger;
 
 	// Constructors
 
@@ -122,4 +123,13 @@ public class Tproduct implements java.io.Serializable {
 		this.saleTo = saleTo;
 	}
 
+	@Column(name="deltriger")
+	public Boolean getDeltriger() {
+		return deltriger;
+	}
+
+	public void setDeltriger(Boolean deltriger) {
+		this.deltriger = deltriger;
+	}
+	
 }
