@@ -22,11 +22,10 @@ public class Tproduct implements java.io.Serializable {
 	private Integer id;
 	private Tsupplier tsupplier;
 	private String name;
-	private String capacity;
-	private String yearCapacity;
-	private String yearProfit;
-	private String yearTax;
-	private String saleTo;
+	private String no;
+	private String size;
+	private String material;
+	private String purpose;
 	private Boolean deltriger;
 
 	// Constructors
@@ -36,14 +35,9 @@ public class Tproduct implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Tproduct(Tsupplier tsupplier, String name, String capacity, String yearCapacity, String yearProfit, String yearTax, String saleTo) {
+	public Tproduct(Tsupplier tsupplier, String name) {
 		this.tsupplier = tsupplier;
 		this.name = name;
-		this.capacity = capacity;
-		this.yearCapacity = yearCapacity;
-		this.yearProfit = yearProfit;
-		this.yearTax = yearTax;
-		this.saleTo = saleTo;
 	}
 
 	// Property accessors
@@ -78,49 +72,39 @@ public class Tproduct implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "capacity", length = 100)
-	public String getCapacity() {
-		return this.capacity;
+	@Column(name = "no", length = 100)
+	public String getNo() {
+		return no;
 	}
 
-	public void setCapacity(String capacity) {
-		this.capacity = capacity;
+	public void setNo(String no) {
+		this.no = no;
+	}
+	
+	@Column(name="size", length=100)
+	public String getSize() {
+		return size;
 	}
 
-	@Column(name = "yearCapacity", length = 100)
-	public String getYearCapacity() {
-		return this.yearCapacity;
+	public void setSize(String size) {
+		this.size = size;
 	}
 
-	public void setYearCapacity(String yearCapacity) {
-		this.yearCapacity = yearCapacity;
+	@Column(name = "material", length = 100)
+	public String getMaterial() {
+		return material;
 	}
 
-	@Column(name = "yearProfit", length = 100)
-	public String getYearProfit() {
-		return this.yearProfit;
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+	@Column(name = "purpose", length = 100)
+	public String getPurpose() {
+		return purpose;
 	}
 
-	public void setYearProfit(String yearProfit) {
-		this.yearProfit = yearProfit;
-	}
-
-	@Column(name = "yearTax", length = 100)
-	public String getYearTax() {
-		return this.yearTax;
-	}
-
-	public void setYearTax(String yearTax) {
-		this.yearTax = yearTax;
-	}
-
-	@Column(name = "saleTo", length = 100)
-	public String getSaleTo() {
-		return this.saleTo;
-	}
-
-	public void setSaleTo(String saleTo) {
-		this.saleTo = saleTo;
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
 	}
 
 	@Column(name="deltriger")

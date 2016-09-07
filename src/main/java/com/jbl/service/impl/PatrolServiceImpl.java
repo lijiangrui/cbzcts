@@ -96,7 +96,7 @@ public class PatrolServiceImpl implements PatrolService {
 	}
 	@Override
 	public List<Patrol> getPatrolByParams(Map<String, Object> params,String chargeDepts) throws Exception {
-		String hql = "from Tpatrol pa where 1=1 ";
+		String hql = "from Tpatrol pa where pa.deltriger=0 ";
 		if(CommonUtils.isNotNull(params)){
 			Iterator it = params.keySet().iterator();
 			while(it.hasNext()){
@@ -156,7 +156,7 @@ public class PatrolServiceImpl implements PatrolService {
 	@Override
 	public List<Patrol> getPatrolByVal(String searchVal,String add) throws Exception {
 		searchVal = "'%"+searchVal.trim()+"%'";
-		String hql = "from Tpatrol pa where 1=1 " +
+		String hql = "from Tpatrol pa where pa.deltriger=0 " +
 				" and (pa.tsupplier.tarea.name like "+searchVal +
 				" or pa.tsupplier.name like "+searchVal +
 				" or pa.content like "+searchVal +
@@ -189,7 +189,7 @@ public class PatrolServiceImpl implements PatrolService {
 	}
 	@Override
 	public Patrol getPatrolBySerialNo(String serialNo) throws Exception {
-		String hql = "from Tpatrol tp where tp.serialNo = '"+serialNo+"'";
+		String hql = "from Tpatrol tp where tp.deltriger=0 and tp.serialNo = '"+serialNo+"'";
 		List<Tpatrol> tpList = patrolDAO.find(hql);
 		if(CommonUtils.isNotNull(tpList)){
 			Tpatrol tp = tpList.get(0);

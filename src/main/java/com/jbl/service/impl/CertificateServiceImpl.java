@@ -60,7 +60,7 @@ public class CertificateServiceImpl implements CertificateService {
 	@Override
 	public List<Certificate> getCertificatesByParam(Map<String, Object> params) throws Exception {
 		// TODO Auto-generated method stub
-		String hql = "from Tcertificate tc where 1=1 ";
+		String hql = "from Tcertificate tc where tc.deltriger=0 ";
 		if(CommonUtils.isNotNull(params)){
 			Iterator it = params.keySet().iterator();
 			while (it.hasNext()) {
@@ -71,10 +71,10 @@ public class CertificateServiceImpl implements CertificateService {
 		hql += " order by tc.tsupplier.id desc";
 		List<Tcertificate> tcerList = cerDAO.find(hql,params);
 		List<Certificate> cerList = new ArrayList<Certificate>();
-		aaa(tcerList,cerList);
+		copyProperties(tcerList,cerList);
 		return cerList;
 	}
-	private void aaa(List<Tcertificate> tcerList, List<Certificate> cerList) {
+	private void copyProperties(List<Tcertificate> tcerList, List<Certificate> cerList) {
 		if(CommonUtils.isNotNull(tcerList)){
 			for(Tcertificate tcer : tcerList){
 				Certificate cer = new Certificate();

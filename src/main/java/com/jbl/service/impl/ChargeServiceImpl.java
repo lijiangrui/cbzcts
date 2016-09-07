@@ -96,7 +96,7 @@ public class ChargeServiceImpl implements ChargeService {
 	}
 	@Override
 	public List<Charge> getChargeByParams(Map<String, Object> params,String chargeDepts) throws Exception {
-		String hql = "from Tcharge pa where 1=1 ";
+		String hql = "from Tcharge pa where pa.deltriger=0 ";
 		if(CommonUtils.isNotNull(params)){
 			Iterator it = params.keySet().iterator();
 			while(it.hasNext()){
@@ -156,7 +156,7 @@ public class ChargeServiceImpl implements ChargeService {
 	@Override
 	public List<Charge> getChargeByVal(String searchVal,String add) throws Exception {
 		searchVal = "'%"+searchVal.trim()+"%'";
-		String hql = "from Tcharge pa where 1=1 " +
+		String hql = "from Tcharge pa where pa.deltriger=0 " +
 				" and (pa.tsupplier.tarea.name like "+searchVal +
 				" or pa.tsupplier.name like "+searchVal +
 				" or pa.chargeTime like "+searchVal +
@@ -188,7 +188,7 @@ public class ChargeServiceImpl implements ChargeService {
 	}
 	@Override
 	public Charge getChargeBySerialNo(String serialNo) throws Exception {
-		String hql = "from Tcharge tc where tc.serialNo= '"+serialNo+"'";
+		String hql = "from Tcharge tc where tc.deltriger=0 and tc.serialNo= '"+serialNo+"'";
 		Tcharge tc = chargeDAO.get(hql);
 		Charge charge = new Charge();
 		if(CommonUtils.isNotNull(tc)){

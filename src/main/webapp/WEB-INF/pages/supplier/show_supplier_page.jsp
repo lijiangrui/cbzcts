@@ -73,11 +73,10 @@
 					   			"<td>"+
 					   				"<input name='plist["+j+"].name'>"+
 					   			"</td>"+
-					   			"<td><input name='plist["+j+"].capacity'></td>"+
-					   			"<td><input name='plist["+j+"].yearCapacity'></td>"+
-					   			"<td><input name='plist["+j+"].yearProfit'></td>"+
-					   			"<td><input name='plist["+j+"].yearTax'></td>"+
-					   			"<td><input name='plist["+j+"].saleTo'></td>"+
+					   			"<td><input name='plist["+j+"].no'></td>"+
+					   			"<td><input name='plist["+j+"].size'></td>"+
+					   			"<td><input name='plist["+j+"].material'></td>"+
+					   			"<td><input name='plist["+j+"].purpose'></td>"+
 					   		"</tr>");
 	  }
   
@@ -211,7 +210,7 @@
 	   		</tr>
 	   		<tr>
 	   			<td>产业分类</td>
-	   			<td colspan="3"><select name="cpTypeId">
+	   			<td><select name="cpTypeId">
 	   				<option value='0'>请选择</option>
 	   				<option value='1'>钢木家具</option>
 	   				<option value='2'>机械加工</option>
@@ -222,7 +221,34 @@
 	   				<option value='7'>金属压延</option>
 	   				<option value='8'>其他类型</option>
 	   			</select></td>
+	   			<td>
+	   				生产能力
+	   			</td>
+	   			<td>
+	   				<input type="text" id="capacity" name="capacity" value=""/>
+	   			</td>
 	   		</tr>
+	   		<tr>
+	   			<td>年产值</td>
+	   			<td>
+	   				<input type="text" id="yearCapacity" name="yearCapacity" value="" />
+	   			</td>
+	   			<td>年利润</td>
+	   			<td>
+	   				<input type="text" id="yearProfit" name="yearProfit" value="" />
+	   			</td>
+	   		</tr>
+	   		<tr>
+	   			<td>年纳税</td>
+	   			<td>
+	   				<input type="text" id="yearTax" name="yearTax" value="" />
+	   			</td>
+	   			<td>销售流向</td>
+	   			<td>
+	   				<input type="text" id="saleTo" name="saleTo" value="" />
+	   			</td>
+	   		</tr>
+	   		
 	   		<tr>
 	   			<td colspan="4">所有产品</td>
 	   		</tr>
@@ -232,11 +258,10 @@
 	   					<tr>
 	   						<td></td>
 	   						<td>产品名称</td>
-	   						<td>生产能力</td>
-	   						<td>年产值</td>
-	   						<td>年利润</td>
-	   						<td>年纳税</td>
-	   						<td>销售流向</td>
+	   						<td>商品代码</td>
+	   						<td>规格</td>
+	   						<td>材料</td>
+	   						<td>用途</td>
 	   					</tr>
 	   					<tr id='tr0' class='tr0'>
 	   						<td>
@@ -245,11 +270,10 @@
 				   			<td>
 				   				<input name='plist[0].name'>
 				   			</td>
-				   			<td><input name='plist[0].capacity'></td>
-				   			<td><input name='plist[0].yearCapacity'></td>
-				   			<td><input name='plist[0].yearProfit'></td>
-				   			<td><input name='plist[0].yearTax'></td>
-				   			<td><input name='plist[0].saleTo'></td>
+				   			<td><input name='plist[0].no'></td>
+				   			<td><input name='plist[0].size'></td>
+				   			<td><input name='plist[0].material'></td>
+				   			<td><input name='plist[0].purpose'></td>
 				   		</tr>
 				   		<tr>
 				   			<td colspan="7">

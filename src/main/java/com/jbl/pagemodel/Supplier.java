@@ -35,8 +35,8 @@ public class Supplier {
 	private Integer workers;
 	private String capacity;
 	private String yearCapacity;
-	private Double yearProfit;
-	private Double yearTax;
+	private String yearProfit;
+	private String yearTax;
 	private String saleTo;
 	private Boolean validation;
 	private Date createTime;
@@ -179,16 +179,16 @@ public class Supplier {
 	public void setYearCapacity(String yearCapacity) {
 		this.yearCapacity = yearCapacity;
 	}
-	public Double getYearProfit() {
+	public String getYearProfit() {
 		return yearProfit;
 	}
-	public void setYearProfit(Double yearProfit) {
+	public void setYearProfit(String yearProfit) {
 		this.yearProfit = yearProfit;
 	}
-	public Double getYearTax() {
+	public String getYearTax() {
 		return yearTax;
 	}
-	public void setYearTax(Double yearTax) {
+	public void setYearTax(String yearTax) {
 		this.yearTax = yearTax;
 	}
 	public String getSaleTo() {

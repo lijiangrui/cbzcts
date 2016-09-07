@@ -38,30 +38,26 @@
   					<input type="hidden" id="sid" name="sid" value="${product.sid }" />
   					<input type="text" id="name" name="name" value="${product.name}" />
   				</td>
-  				<td>生产能力</td>
+  				<td>商品代码</td>
   				<td>
-  					<input type="text" id="capacity" name="capacity" value="${product.capacity }" />
+  					<input type="text" id="no" name="no" value="${product.no }" />
   				</td>
   			</tr>
   			<tr>
-  				<td>年产值</td>
+  				<td>产品规格</td>
   				<td>
-  					<input type="text" id="yearCapacity" name="yearCapacity" value="${product.yearCapacity }" />
+  					<input type="text" id="size" name="size" value="${product.size }" />
   				</td>
-  				<td>年利润</td>
+  				<td>材料</td>
   				<td>
-  					<input type="text" id="yearProfit" name="yearProfit" value="${product.yearProfit }" />
+  					<input type="text" id="material" name="material" value="${product.material }" />
   				</td> 
   			</tr>
   			<tr>
-  				<td>年纳税</td>
-  				<td>
-  					<input type="text" id="yearTax" name ='yearTax' value="${product.yearTax }" />
+  				<td>用途</td>
+  				<td colspan="3">
+  					<input type="text" id="purpose" name ='purpose' value="${product.purpose}" />
   				</td>
-  				<td>销售流向</td>
-  				<td>
-  					<input type="text" id="saleTo" name="saleTo" value="${product.saleTo }" />
-   				</td>
   			</tr>
 			<tr>
 				<td colspan="4">

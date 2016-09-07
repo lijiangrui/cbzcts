@@ -43,7 +43,7 @@ public class TypeServiceImpl implements TypeService {
 	@Override
 	public List<Type> getTypesByDeptId(int deptId,String typ) throws Exception {
 		Map<String,Object> params = new HashMap<String,Object>();
-		String hql = "from Ttype tt where tt.type='"+typ+"' ";
+		String hql = "from Ttype tt where tt.deltriger=0 and tt.type='"+typ+"' ";
 		if(deptId != JBLConstants.ADMINDEPTID){
 			params.put("deptId", deptId);
 			hql += "and tt.tdept.id=:deptId";
@@ -90,7 +90,7 @@ public class TypeServiceImpl implements TypeService {
 	}
 	@Override
 	public List<Type> getAllTypes(String type) throws Exception {
-		String hql = "from Ttype tt where tt.type='"+type+"' order by tt.tdept.id asc";
+		String hql = "from Ttype tt where tt.deltriger=0 and tt.type='"+type+"' order by tt.tdept.id asc";
 		List<Ttype> ttypeList = typeDAO.find(hql);
 		List<Type> typeList = new ArrayList<Type>();
 		return copyProp(ttypeList, typeList);

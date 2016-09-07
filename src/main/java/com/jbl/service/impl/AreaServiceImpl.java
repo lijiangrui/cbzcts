@@ -30,7 +30,7 @@ public class AreaServiceImpl implements AreaService{
 
 	@Override
 	public List<Area> getAreasByPid(int pid) throws Exception {
-		String hql = "from Tarea t where t.tarea.id = :pid";
+		String hql = "from Tarea t where t.deltrigger = 0 and t.tarea.id = :pid";
 		Map<String,Object> params = new HashMap<String,Object>();
 		List<Area> areaList = new ArrayList<Area>();
 		params.put("pid", pid);

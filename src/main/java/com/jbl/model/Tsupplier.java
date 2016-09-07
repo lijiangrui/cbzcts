@@ -48,8 +48,8 @@ public class Tsupplier implements java.io.Serializable {
 	private Integer workers;
 	private String capacity;
 	private String yearCapacity;
-	private Double yearProfit;
-	private Double yearTax;
+	private String yearProfit;
+	private String yearTax;
 	private String saleTo;
 	private Boolean validation;
 	private Date createTime;
@@ -72,7 +72,7 @@ public class Tsupplier implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Tsupplier(Tarea tarea, String name, String position, String code, String license, String legalPerson, String idNo, String contactPerson, String contact, Integer scaleId, Integer zcCapital, Integer gdCapital, Date foundDate, Integer zcTypeId, Integer cpTypeId, String product, Integer workers, String capacity, String yearCapacity, Double yearProfit, Double yearTax, String saleTo, Boolean validation, Date createTime, Boolean deltriger, Set<Tcharge> tcharges, Set<Tcertificate> tcertificates, Set<Tpatrol> tpatrols) {
+	public Tsupplier(Tarea tarea, String name, String position, String code, String license, String legalPerson, String idNo, String contactPerson, String contact, Integer scaleId, Integer zcCapital, Integer gdCapital, Date foundDate, Integer zcTypeId, Integer cpTypeId, String product, Integer workers, String capacity, String yearCapacity, String yearProfit, String yearTax, String saleTo, Boolean validation, Date createTime, Boolean deltriger, Set<Tcharge> tcharges, Set<Tcertificate> tcertificates, Set<Tpatrol> tpatrols) {
 		this.tarea = tarea;
 		this.name = name;
 		this.position = position;
@@ -325,20 +325,20 @@ public class Tsupplier implements java.io.Serializable {
 	}
 
 	@Column(name = "yearProfit", precision = 11)
-	public Double getYearProfit() {
+	public String getYearProfit() {
 		return this.yearProfit;
 	}
 
-	public void setYearProfit(Double yearProfit) {
+	public void setYearProfit(String yearProfit) {
 		this.yearProfit = yearProfit;
 	}
 
 	@Column(name = "yearTax", precision = 11)
-	public Double getYearTax() {
+	public String getYearTax() {
 		return this.yearTax;
 	}
 
-	public void setYearTax(Double yearTax) {
+	public void setYearTax(String yearTax) {
 		this.yearTax = yearTax;
 	}
 

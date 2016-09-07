@@ -67,5 +67,7 @@ public class JBLConstants {
 	public static final String PREFIX_PATROL = "X";
 
 	public static final Integer ADMINID = 1;
+
+	public static final String DUPLICATEUSER = "该用户名与密码已存在！";
 	
 }

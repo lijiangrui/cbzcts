@@ -39,30 +39,26 @@
   				<td>
   					${product.name}
   				</td>
-  				<td>生产能力</td>
+  				<td>商品代码</td>
   				<td>
-  					${product.capacity }
+  					${product.no }
   				</td>
   			</tr>
   			<tr>
-  				<td>年产值</td>
+  				<td>产品规格</td>
   				<td>
-  					${product.yearCapacity }
+  					${product.size }
   				</td>
-  				<td>年利润</td>
+  				<td>材料</td>
   				<td>
-  					${product.yearProfit }
+  					${product.material }
   				</td> 
   			</tr>
   			<tr>
-  				<td>年纳税</td>
-  				<td>
-  					${product.yearTax }
+  				<td>用途</td>
+  				<td colspan="3">
+  					${product.purpose }
   				</td>
-  				<td>销售流向</td>
-  				<td>
-  					${product.saleTo }
-   				</td>
   			</tr>
 		</table>	
   </body>

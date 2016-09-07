@@ -4,15 +4,13 @@ import com.jbl.model.Tsupplier;
 
 public class Product {
 	private Integer id;
-	private Tsupplier tsupplier;
 	private Integer sid;
 	private String supplierName;
 	private String name;
-	private String capacity;
-	private String yearCapacity;
-	private String yearProfit;
-	private String yearTax;
-	private String saleTo;
+	private String no;
+	private String size;
+	private String material;
+	private String purpose;
 	public Integer getId() {
 		return id;
 	}
@@ -31,46 +29,34 @@ public class Product {
 	public void setSupplierName(String supplierName) {
 		this.supplierName = supplierName;
 	}
-	public Tsupplier getTsupplier() {
-		return tsupplier;
-	}
-	public void setTsupplier(Tsupplier tsupplier) {
-		this.tsupplier = tsupplier;
-	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCapacity() {
-		return capacity;
+	public String getNo() {
+		return no;
 	}
-	public void setCapacity(String capacity) {
-		this.capacity = capacity;
+	public void setNo(String no) {
+		this.no = no;
 	}
-	public String getYearCapacity() {
-		return yearCapacity;
+	public String getSize() {
+		return size;
 	}
-	public void setYearCapacity(String yearCapacity) {
-		this.yearCapacity = yearCapacity;
+	public void setSize(String size) {
+		this.size = size;
 	}
-	public String getYearProfit() {
-		return yearProfit;
+	public String getMaterial() {
+		return material;
 	}
-	public void setYearProfit(String yearProfit) {
-		this.yearProfit = yearProfit;
+	public void setMaterial(String material) {
+		this.material = material;
 	}
-	public String getYearTax() {
-		return yearTax;
+	public String getPurpose() {
+		return purpose;
 	}
-	public void setYearTax(String yearTax) {
-		this.yearTax = yearTax;
-	}
-	public String getSaleTo() {
-		return saleTo;
-	}
-	public void setSaleTo(String saleTo) {
-		this.saleTo = saleTo;
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
 	}
 }

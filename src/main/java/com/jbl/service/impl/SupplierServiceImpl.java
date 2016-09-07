@@ -82,7 +82,7 @@ public class SupplierServiceImpl implements SupplierService {
 		Set<Tcertificate> tcSet = new HashSet<Tcertificate>();
 		if(CommonUtils.isNotNull(cList)){
 			for(Certificate c : cList){
-				if(CommonUtils.isNotNull(c)){
+				if(CommonUtils.isNotNull(c)&&CommonUtils.isNotNull(c.getType())){
 					Tcertificate tc = new Tcertificate();
 					BeanUtils.copyProperties(c, tc);
 					tc.setTsupplier(tsupplier);
@@ -97,7 +97,7 @@ public class SupplierServiceImpl implements SupplierService {
 		Set<Tproduct> tpSet = new HashSet<Tproduct>();
 		if(CommonUtils.isNotNull(pList)){
 			for(Product p : pList){
-				if(CommonUtils.isNotNull(p)){
+				if(CommonUtils.isNotNull(p)&&CommonUtils.isNotNull(p.getName())){
 					Tproduct tp = new Tproduct();
 					BeanUtils.copyProperties(p, tp);
 					tp.setTsupplier(tsupplier);
@@ -111,7 +111,7 @@ public class SupplierServiceImpl implements SupplierService {
 	
 	@Override
 	public List<Supplier> getSuppliersByAreaId(int areaId) throws Exception {
-		String hql = "from Tsupplier ts where ts.tarea.id=:areaId";
+		String hql = "from Tsupplier ts where ts.deltriger=0 and ts.tarea.id=:areaId";
 		Map<String,Object> params = new HashMap<String,Object>();
 		params.put("areaId", areaId);
 		List<Tsupplier> tslist = sprDAO.find(hql, params);
@@ -212,7 +212,7 @@ public class SupplierServiceImpl implements SupplierService {
 	@Override
 	public List<Supplier> getSupplierByVal(String searchVal) throws Exception {
 		searchVal = "'%"+searchVal.trim()+"%'";
-		String hql = "from Tsupplier ts where 1=1" +
+		String hql = "from Tsupplier ts where ts.deltriger=0 " +
 				" and (ts.code like "+searchVal +
 				" or ts.name like "+searchVal +
 				" or ts.tarea.name like "+searchVal +
@@ -252,7 +252,7 @@ public class SupplierServiceImpl implements SupplierService {
 	}
 	@Override
 	public boolean isExist(String no) throws Exception {
-		String hql = "from Tsupplier ts where 1=1 " +
+		String hql = "from Tsupplier ts where ts.deltriger=0 " +
 				" and (ts.code = '"+no+"'" +
 				" or ts.license = '"+no+"')";
 		List<Tsupplier> tslist = sprDAO.find(hql);
@@ -261,7 +261,7 @@ public class SupplierServiceImpl implements SupplierService {
 	}
 	@Override
 	public List<Supplier> getSupplierByParams(Map<String, Object> params) throws Exception {
-		String hql ="from Tsupplier ts where 1=1 ";
+		String hql ="from Tsupplier ts where ts.deltriger=0 ";
 		if(CommonUtils.isNotNull(params)){
 			Iterator it = params.keySet().iterator();
 			while(it.hasNext()){

@@ -60,7 +60,7 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Product> getProductsByParams(Map<String, Object> params) throws Exception {
 		// TODO Auto-generated method stub
-		String hql = "from Tproduct tp where 1=1 ";
+		String hql = "from Tproduct tp where tp.deltriger=0 ";
 		if(CommonUtils.isNotNull(params)){
 			Iterator it = params.keySet().iterator();
 			while (it.hasNext()) {
@@ -76,9 +76,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 	private void copyProperties(List<Tproduct> tproList, List<Product> proList) {
 		// TODO Auto-generated method stub
+		int id = 0;
 		if(CommonUtils.isNotNull(tproList)){
 			for(Tproduct tpro : tproList){
 				Product pro = new Product();
+				id=tpro.getId();
 				copyProperty(tpro,pro);
 				proList.add(pro);
 			}

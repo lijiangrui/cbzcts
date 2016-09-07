@@ -21,6 +21,8 @@
   </head>
   
   <body>
+  
+  
    	<display:table name="resultList" id="table_row"
 			class="ITS" 
 			requestURI="recordAction!record0List.action"

@@ -186,7 +186,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> searchUserListByParams(Map<String, Object> params) throws Exception {
-		String hql="from Tuser u where u.id != 1";
+		String hql="from Tuser u where u.deltriger=0 and u.id != 1";
 		if(CommonUtils.isNotNull(params)){
 			for(String key : params.keySet()){
 				hql += " and u."+key+" like :"+key+"";
@@ -198,7 +198,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> getUserByVal(String searchVal) throws Exception {
 		searchVal = "'%"+searchVal.trim()+"%'";
-		String hql = "from Tuser ts where 1=1" +
+		String hql = "from Tuser ts where ts.deltriger=0 " +
 				" and (ts.name like "+searchVal +
 				" or ts.realname like "+searchVal +
 				" or ts.tdept.tcompany.name like "+searchVal +

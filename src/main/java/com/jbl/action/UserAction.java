@@ -12,6 +12,7 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import com.jbl.pagemodel.Company;
 import com.jbl.pagemodel.Dept;
@@ -198,14 +199,22 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 		getRequest().setAttribute(name+"Html", checkBoxHtml.toString());
 	}
 
-	@Action(value="saveuser",results={@Result(name="success",location="/savesuccess.jsp")})
+	@Action(value="saveuser",results={
+			@Result(name="success",location="/savesuccess.jsp"),
+			@Result(name="fail",location="/msg.jsp")
+	})
 	public String saveUser(){
 		try {
 			userService.save(user);
 			operateRecord(Messages.SAVE_USER+user.getName(), JBLConstants.ADD);
+		} catch(DataIntegrityViolationException dive){
+			dive.printStackTrace();
+			setMsg(JBLConstants.DUPLICATEUSER);
+			return "fail";
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			setMsg(JBLConstants.SAVE_FAIL);
+			return "fail";
 		}
 		setUrl("adduser!addUser.action");
 		return SUCCESS;
@@ -292,12 +301,18 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 		selectHtml(cList, "id", "name", "companyid","cHtml",selectedId,changeMethodName);
 	}
 	
-	@Action(value="modify",results={@Result(name="success",location="/sub_success.jsp"),@Result(name="fail",location="/msg.jsp")})
+	@Action(value="modify",results={
+			@Result(name="success",location="/sub_success.jsp"),
+			@Result(name="fail",location="/msg.jsp")})
 	public String modify(){
 		try {
 			
 			userService.update(user);
 			operateRecord(Messages.MODIFY_USER+user.getName(), JBLConstants.MODIFY);
+		} catch(DataIntegrityViolationException dive){
+			dive.printStackTrace();
+			setMsg(JBLConstants.DUPLICATEUSER);
+			return "fail";
 		} catch (Exception e) {
 			e.printStackTrace();
 			setMsg(JBLConstants.MODIFY_FAIL);
@@ -310,6 +325,7 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 	@Action(value="delete",results={@Result(name="success",location="/sub_success.jsp"),@Result(name="fail",location="/msg.jsp")})
 	public String delete(){
 		try {
+			user = userService.getUserById(user.getId());
 			userService.delete(user);
 			operateRecord(Messages.DELETE_USER+user.getName(), JBLConstants.DELETE);
 		} catch (Exception e) {

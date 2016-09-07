@@ -42,9 +42,13 @@
 		 	
 			<display:column property="name" title="产品名称"/>
 			
-			<display:column property="yearCapacity" title="年产值"/>
+			<display:column property="no" title="商品代码"/>
 			
-			<display:column property="yearTax" title="年纳税" style="text-align:left;" />
+			<display:column property="size" title="产品规格" style="text-align:left;" />
+			
+			<display:column property="material" title="材料" style="text-align:left;" />
+			
+			<display:column property="purpose" title="用途" style="text-align:left;" />
 			
 			<display:column title="操作" style="text-align:left;">
 				<input type="button" value="查看" onclick="checkItem(${table_row.id});" />				
