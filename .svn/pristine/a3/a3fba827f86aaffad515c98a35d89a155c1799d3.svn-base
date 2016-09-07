@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 d0b5e6aed45cd5854f95529009f6f3cd614de72c unknown <Administrator@ljr-PC.(none)> 1473148999 +0800	clone: from https://github.com/lijiangrui/cbzcts.git
+d0b5e6aed45cd5854f95529009f6f3cd614de72c 59125b3a8d297729dc4cbe7fdb494cce779b29de lijiangrui <lijiangrui@aliyun.com> 1473155638 +0800	commit: modify by lijiangrui
+59125b3a8d297729dc4cbe7fdb494cce779b29de 098e7fc8603572513ac640e93211a87a1180bffa lijiangrui <lijiangrui@aliyun.com> 1473155727 +0800	commit (amend): modify by lijiangrui
+098e7fc8603572513ac640e93211a87a1180bffa b115793d09bb3edec85c38854d6f4a3b927e9e9b lijiangrui <lijiangrui@aliyun.com> 1473155822 +0800	commit (amend): 修改删除方式 modify by 李江瑞
+b115793d09bb3edec85c38854d6f4a3b927e9e9b 21434d0d8bfa8635d467381a7bb4a56d4e30ef76 lijiangrui <lijiangrui@aliyun.com> 1473208541 +0800	pull: Fast-forward

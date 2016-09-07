@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="cbzcts"
+  id="myeclipse.1429796574412"
+  context-root="/cbzcts"
+  j2ee-spec="6.0"
+  archive="cbzcts.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
