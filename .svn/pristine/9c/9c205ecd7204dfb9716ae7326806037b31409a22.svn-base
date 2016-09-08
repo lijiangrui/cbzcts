@@ -1,0 +1,30 @@
+
+修改产品字段
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   src/main/java/com/jbl/action/UserAction.java
+#	modified:   src/main/java/com/jbl/model/Tproduct.java
+#	modified:   src/main/java/com/jbl/model/Tsupplier.java
+#	modified:   src/main/java/com/jbl/pagemodel/Product.java
+#	modified:   src/main/java/com/jbl/pagemodel/Supplier.java
+#	modified:   src/main/java/com/jbl/service/impl/AreaServiceImpl.java
+#	modified:   src/main/java/com/jbl/service/impl/CertificateServiceImpl.java
+#	modified:   src/main/java/com/jbl/service/impl/ChargeServiceImpl.java
+#	modified:   src/main/java/com/jbl/service/impl/PatrolServiceImpl.java
+#	modified:   src/main/java/com/jbl/service/impl/ProductServiceImpl.java
+#	modified:   src/main/java/com/jbl/service/impl/SupplierServiceImpl.java
+#	modified:   src/main/java/com/jbl/service/impl/TypeServiceImpl.java
+#	modified:   src/main/java/com/jbl/service/impl/UserServiceImpl.java
+#	modified:   src/main/java/com/jbl/util/JBLConstants.java
+#	modified:   src/main/webapp/WEB-INF/pages/common/recordlist.jsp
+#	modified:   src/main/webapp/WEB-INF/pages/product/show_modifyproduct_page.jsp
+#	modified:   src/main/webapp/WEB-INF/pages/product/show_product.jsp
+#	modified:   src/main/webapp/WEB-INF/pages/product/show_product_list.jsp
+#	modified:   src/main/webapp/WEB-INF/pages/supplier/show_supplier_page.jsp
+#	modified:   src/main/webapp/WEB-INF/web.xml
+#	modified:   src/main/webapp/js/util.js
+#

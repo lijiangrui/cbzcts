@@ -199,7 +199,7 @@
 	   		</tr>
 	   		<tr>
 	   			<td>产业分类</td>
-	   			<td colspan='3'><select id="cpTypeId" name="cpTypeId">
+	   			<td><select id="cpTypeId" name="cpTypeId">
 	   				<option value='0'>请选择</option>
 	   				<option value='1'>钢木家具</option>
 	   				<option value='2'>机械加工</option>
@@ -211,6 +211,32 @@
 	   				<option value='8'>其他类型</option>
 	   			</select>
 	   			<input type="hidden" id="cpTypeIdVal" value="${supplier.cpTypeId}" />
+	   			</td>
+	   			<td>
+	   				生产能力
+	   			</td>
+	   			<td>
+	   				<input type="text" id="capacity" name="capacity" value="${supplier.capacity}"/>
+	   			</td>
+	   		</tr>
+	   		<tr>
+	   			<td>年产值</td>
+	   			<td>
+	   				<input type="text" id="yearCapacity" name="yearCapacity" value="${supplier.yearCapacity}" />
+	   			</td>
+	   			<td>年利润</td>
+	   			<td>
+	   				<input type="text" id="yearProfit" name="yearProfit" value="${supplier.yearProfit}" />
+	   			</td>
+	   		</tr>
+	   		<tr>
+	   			<td>年纳税</td>
+	   			<td>
+	   				<input type="text" id="yearTax" name="yearTax" value="${supplier.yearTax}" />
+	   			</td>
+	   			<td>销售流向</td>
+	   			<td>
+	   				<input type="text" id="saleTo" name="saleTo" value="${supplier.saleTo}" />
 	   			</td>
 	   		</tr>
 	   		<%
